@@ -69,7 +69,7 @@ class DownloadController < ApplicationController
             data[distro][:flavor] = set_distro_flavor e.attributes['baseproject']
             case e.attributes['baseproject']
             when /^(DISCONTINUED:)?openSUSE:/, /^(DISCONTINUED:)?SUSE:SLE-/
-              data[distro][:ymp] = "https://software.opensuse.org/ymp/#{@project}/#{distro}/#{@package}.ymp"
+              data[distro][:ymp] = "/ymp/#{@project}/#{distro}/#{@package}.ymp"
             end
           end
           filename = e.attributes['filename']

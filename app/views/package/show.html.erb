@@ -40,7 +40,7 @@
           <% unless @default_package.blank? %>
             <%
               url = url_for :controller => 'download', :action => 'ymp_without_arch_and_version', :query => @pkgname,
-              :project => @default_package.project, :repository => @default_package.repository, :package => @pkgname, :base => @default_package.baseproject, :protocol => 'https'
+              :project => @default_package.project, :repository => @default_package.repository, :package => @pkgname, :base => @default_package.baseproject
             %>
             <ul class="list-inline">
               <li class="list-inline-item"><%= _("Version") %> <%= shorten @default_package.version, 13 %></li>

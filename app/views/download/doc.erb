@@ -13,7 +13,7 @@
 
 <p>Just create a link to </p>
 <pre>https://software.opensuse.org/download/package?project=<b>&lt;projectname&gt;</b>&amp;package=<b>&lt;packagename&gt;</b></pre>
-<p>for example: <%= link_to "https://software.opensuse.org/download/package?project=openSUSE:Tools&amp;package=osc", :controller => :download, :action => :package, :project => "openSUSE:Tools", :package => "osc" %>
+<p>for example: <%= link_to "/download/package?project=openSUSE:Tools&amp;package=osc", :controller => :download, :action => :package, :project => "openSUSE:Tools", :package => "osc" %>
 </p>
 
 <p>To embed this page as an iframe in the download section of your project homepage, you can use this code: </p>
@@ -24,7 +24,7 @@
 
 <p>Which will result in an output like this: </p>
 
-<iframe src="<%= url_for :controller => :download, :action => :package, :project => "openSUSE:Tools", :package => "osc", :format => "iframe", :protocol => "https" %>" width="100%" height="700px" frameBorder="0" ></iframe>
+<iframe src="<%= url_for :controller => :download, :action => :package, :project => "openSUSE:Tools", :package => "osc", :format => "iframe" %>" width="100%" height="700px" frameBorder="0" ></iframe>
 
 <h3>Creating a download page for a pattern</h3>
 
@@ -46,12 +46,12 @@
 
 <p>Which will result in an output like this: </p>
 
-<iframe src="<%= url_for :controller => :download, :action => :appliance, :project => "OBS:Server:2.8", :format => "iframe", :protocol => "https" %>" width="100%" height="700px" frameBorder="0"></iframe>
+<iframe src="<%= url_for :controller => :download, :action => :appliance, :project => "OBS:Server:2.8", :format => "iframe" %>" width="100%" height="700px" frameBorder="0"></iframe>
 
 <h2>Advanced options</h2>
 
 <p><b>JSON output:</b> You can also request the data in json format by using .json as output format, for example:
-  <%= link_to "https://software.opensuse.org/download/package.json?project=openSUSE:Tools&package=obs-server", :controller => :download, :action => :package, :format => :json, :project => "openSUSE:Tools", :package => "obs-server" %>.
+  <%= link_to "/download/package.json?project=openSUSE:Tools&package=obs-server", :controller => :download, :action => :package, :format => :json, :project => "openSUSE:Tools", :package => "obs-server" %>.
 </p>
 
   <p>
@@ -59,7 +59,7 @@
   To customize the theming of the download page, you have multiple options to change the colors.
   Use the parameters <b>bcolor</b>, <b>fcolor</b>, <b>hcolor</b> and <b>acolor</b> to set the different colors. <br/>
   Example:
-    <%= link_to "https://software.opensuse.org/download/appliance.iframe?project=openSUSE:Tools&fcolor=607890&hcolor=607890&acolor=607890&bcolor=123", :controller => :download, :action => :appliance, :format => :iframe, :project => "openSUSE:Tools", :fcolor => "607890", :hcolor => "607890", :acolor => "607890", :bcolor => "123" %>
+    <%= link_to "/download/appliance.iframe?project=openSUSE:Tools&fcolor=607890&hcolor=607890&acolor=607890&bcolor=123", :controller => :download, :action => :appliance, :format => :iframe, :project => "openSUSE:Tools", :fcolor => "607890", :hcolor => "607890", :acolor => "607890", :bcolor => "123" %>
   </p>
-  <iframe src="<%= url_for :controller => :download, :action => :package, :fcolor => "ffffff", :hcolor => "55d9cb", :acolor => "35b9ab", :bcolor => "173f4f", :project => "openSUSE:Tools", :package => "osc", :format => "iframe", :protocol => "https" %>" width="100%" height="700px" frameBorder="0" ></iframe>
+  <iframe src="<%= url_for :controller => :download, :action => :package, :fcolor => "ffffff", :hcolor => "55d9cb", :acolor => "35b9ab", :bcolor => "173f4f", :project => "openSUSE:Tools", :package => "osc", :format => "iframe" %>" width="100%" height="700px" frameBorder="0" ></iframe>
 </div>
